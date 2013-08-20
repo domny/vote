@@ -1,0 +1,48 @@
+!!com.taobao.tae.config.domain.Config
+
+#应用元信息
+title: vote-app
+description: 投票应用新的结构
+version: 1
+language: php
+author: shihong
+thumbnail: /aaa
+
+#type: 1 tae 模块 2 独立站点
+type: 2
+
+#全局css的配置
+css: /assets/stylesheets/default.css
+
+#首页
+index: /view/front/view.php
+
+#管理首页
+
+
+#http请求配置
+urls:
+#前端页面
+- {handler: /view/front/view.php, url: /index}
+- {handler: /view/front/report.php, url: /report}
+- {handler: /view/front/report_jsonp.php, url: /reportJsonp}
+
+
+#卖家管理页面
+- {handler: /view/admin/admin.php, url: /admin}
+- {handler: /view/admin/itemlist.php, url: /itemlist}
+- {handler: /view/admin/infolist.php, url: /infolist}
+- {handler: /view/admin/vote_item_action.php, url: /voteItemAction}
+
+
+#远程服务请求配置
+services:
+- {serviceName: vote_service ,handler: /services/vote_service.php }
+
+
+
+#安全和权限配置
+security:
+- {url: /index,role: anonymous }
+- {url: /report,role: anonymous  }
+- {url: /,role: anonymous }
